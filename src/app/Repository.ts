@@ -10,4 +10,5 @@ export interface Repository {
     topics: any;
     language: string;
     updated_at: string; 
+    issue_comment_url: string
   }

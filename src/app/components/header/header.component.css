@@ -21,6 +21,8 @@
 .header-bar .header-search form {
     height: 100%;
     display: flex;
+    padding-right: 10px;
+    
 }
 
 .header-bar .header-search form input {
@@ -31,6 +33,14 @@
     background-color: #f6f8fa;
     font-size: 0.75rem;
     font-weight: 500;
+
+}
+.header-bar .header-search form button {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #d0d7de;
+    border-radius: 5px;
+    background: transparent;
 }
 
 .header-bar .header-bar-button {
@@ -41,13 +51,5 @@
     
 }
 
-.header-bar .header-bar-button button {
-    width: 32px;
-    height: 32px;
-    border: 1px solid #d0d7de;
-    border-radius: 5px;
-    background: transparent;
-    
-}
 
 

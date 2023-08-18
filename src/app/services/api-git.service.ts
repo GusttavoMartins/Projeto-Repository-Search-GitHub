@@ -8,7 +8,7 @@ import { of } from 'rxjs'; // operador de criação de observável
   providedIn: 'root'
 })
 export class ApiGITService {
-  private apiURL = 'https://api.github.com/search/repositories?q='
+  private apiURL = 'https://api.github.com/search/repositories?q=node'
 
   private repositories: Repository[] = []; // Armazena os dados
   private total_count: number = 0;

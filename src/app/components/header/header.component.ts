@@ -15,12 +15,8 @@ export class HeaderComponent {
   }
   searchTerm: string = ''; // Variável para rastrear o termo de pesquisa
 
-  handleChange(): void{
-    console.log('handle')
-  }
 
   getRepository(): void {
-    //subscribe diz que o evento está sendo concretizado (esperndo o evento para realizar 'alguma coisa')
     if (this.searchTerm.trim() !== ''){
         this.apiGIT.getAll(this.searchTerm).subscribe((response: {repositories: Repository[], total_count: number}) => {
         console.log(response.repositories);
