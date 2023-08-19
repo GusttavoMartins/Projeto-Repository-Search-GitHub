@@ -8,7 +8,7 @@ import { Repository } from '../Repository';
 })
 
 export class ApiGITService {
-  private apiURL = 'https://api.github.com/search/repositories?q=python'
+  private apiURL = 'https://api.github.com/search/repositories?q=Angular'
 
   private repositories: Repository[] = [];
   private total_count: number = 0;
