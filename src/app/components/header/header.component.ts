@@ -14,13 +14,13 @@ export class HeaderComponent {
 
   }
   searchTerm: string = ''; // Variável para rastrear o termo de pesquisa
+  page: number = 0;
+  perPage: number= 0;
 
 
   getRepository(): void {
     if (this.searchTerm.trim() !== ''){
-        this.apiGIT.getAll(this.searchTerm).subscribe((response: {repositories: Repository[], total_count: number}) => {
-        console.log(response.repositories);
-        console.log(response.total_count);
+        this.apiGIT.getAll(this.searchTerm, this.page, this.perPage).subscribe((response: {repositories: Repository[], total_count: number}) => {
         this.searchService.setSearchTerm(this.searchTerm);
       }); 
     }

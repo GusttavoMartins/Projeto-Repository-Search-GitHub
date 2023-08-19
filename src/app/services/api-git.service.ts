@@ -8,7 +8,7 @@ import { Repository } from '../Repository';
 })
 
 export class ApiGITService {
-  private apiURL = 'https://api.github.com/search/repositories?q=Angular'
+  private apiURL = 'https://api.github.com/search/repositories?q='
 
   private repositories: Repository[] = [];
   private total_count: number = 0;
@@ -16,9 +16,9 @@ export class ApiGITService {
   
   constructor(private http: HttpClient) { }
 
-  getAll(searchTerm: string): Observable<{ repositories: Repository[], total_count: number }> {
+  getAll(searchTerm: string, page: number, perPage: number): Observable<{ repositories: Repository[], total_count: number }> {
 
-    const apiUrl = `${this.apiURL}${encodeURIComponent(searchTerm)}`;
+    const apiUrl = `${this.apiURL}${encodeURIComponent(searchTerm)}&&per_page=${perPage}&page=${page}`;
     
     return this.http.get<{ items: Repository[], total_count: number }>(apiUrl).pipe(
       map(response => {
