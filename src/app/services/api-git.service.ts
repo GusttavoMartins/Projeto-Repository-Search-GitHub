@@ -22,6 +22,7 @@ export class ApiGITService {
     
     return this.http.get<{ items: Repository[], total_count: number }>(apiUrl).pipe(
       map(response => {
+         
         this.repositories = response.items;
         this.total_count = response.total_count;
         this.repositories.forEach(repository => {
