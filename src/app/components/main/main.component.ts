@@ -22,7 +22,7 @@ export class MainComponent {
 
   constructor(private apiGIT: ApiGITService, private searchService: SearchService) {}
 
-  ngOnInit(): void{ 
+  ngOnInit(searchTerm: string): void{ 
     this.searchService.getSearchTerm().subscribe(searchTerm => {
       this.loadRepositories(searchTerm);
     });
